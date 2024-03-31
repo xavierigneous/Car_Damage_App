@@ -34,9 +34,9 @@ def index():
                 plt.axis('off')
                 # buffer.seek(0)
             annotated_image = plot()
-            return render_template('index.html', image=annotated_image)
+            return render_template('car_damage_app.html', image=annotated_image)
 
-    return render_template('index.html')
+    return render_template('car_damage_app.html')
 
 def plot():
     buffer = BytesIO()
