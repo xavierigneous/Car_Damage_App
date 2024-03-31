@@ -26,7 +26,6 @@ def index():
             for r in result:
                 im_array = r.plot()  # plot a BGR numpy array of predictions
                 result_image = Image.fromarray(im_array[..., ::-1])  # RGB PIL image
-                # annotated_image.save('results.jpg')  # save image
                 # Save the annotated image to a temporary buffer
                 buffer = BytesIO()
                 # annotated_image.save(buffer, format='PNG')
@@ -34,7 +33,7 @@ def index():
                 plt.axis('off')
                 # buffer.seek(0)
             annotated_image = plot()
-            return render_template('homepage.html', image=annotated_image)
+            return render_template('homepage.html', annotated_image=annotated_image)
 
     return render_template('homepage.html')
 
